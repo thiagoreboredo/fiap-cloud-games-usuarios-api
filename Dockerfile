@@ -2,13 +2,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia os arquivos de projeto (.csproj) e o arquivo de solução (.sln)
+# Copia o arquivo de solução (.sln) e os arquivos de projeto (.csproj)
+COPY ["Usuarios.API.sln", "."]
 COPY ["Usuarios.API/Usuarios.API.csproj", "Usuarios.API/"]
 COPY ["Application/Application.csproj", "Application/"]
 COPY ["Domain/Domain.csproj", "Domain/"]
 COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
 COPY ["Usuarios.APITest/Usuarios.APITest.csproj", "Usuarios.APITest/"]
-COPY Usuarios.API.sln .
 
 # Restaura as dependências de todos os projetos
 RUN dotnet restore "Usuarios.API.sln"
