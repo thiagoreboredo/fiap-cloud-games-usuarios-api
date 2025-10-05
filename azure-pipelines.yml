@@ -61,5 +61,4 @@ stages:
         azureSubscription: '$(azureSubscription)'
         resourceGroup: '$(resourceGroup)'
         containerAppName: '$(containerAppName)'
-        acrName: '$(acrLoginServer)'
         imageToDeploy: '$(acrLoginServer)/$(imageRepository):$(tag)'
