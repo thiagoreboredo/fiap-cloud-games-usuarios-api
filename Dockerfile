@@ -7,7 +7,7 @@ COPY ["Usuarios.API/Usuarios.API.csproj", "Usuarios.API/"]
 COPY ["Application/Application.csproj", "Application/"]
 COPY ["Domain/Domain.csproj", "Domain/"]
 COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
-COPY ["FIAP-Cloud-GamesTest/FIAP-Cloud-GamesTest.csproj", "FIAP-Cloud-GamesTest/"]
+COPY ["Usuarios.APITest/Usuarios.APITest.csproj", "Usuarios.APITest/"]
 COPY Usuarios.API.sln .
 
 # Restaura as dependências de todos os projetos
