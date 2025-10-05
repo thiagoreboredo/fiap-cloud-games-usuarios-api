@@ -54,11 +54,13 @@ stages:
   jobs:
   - job: DeployJob
     displayName: 'Deploy'
+    pool: 'Default'
     steps:
     - task: AzureContainerApps@1
       displayName: 'Deploy da Imagem no Azure Container App'
       inputs:
         azureSubscription: '$(azureSubscription)'
+        acrServiceConnection: '$(acrServiceConnection)'
         resourceGroup: '$(resourceGroup)'
         containerAppName: '$(containerAppName)'
         imageToDeploy: '$(acrLoginServer)/$(imageRepository):$(tag)'
