@@ -109,7 +109,7 @@ app.UseHttpsRedirection();
 
 #region Map endpoints
 app.MapPersonEndpoints();
-app.MapGet("/health", () => new { status = "healthy", timestamp = DateTime.UtcNow });
+app.MapGet("/health", () => new { status = "healthy", timestamp = DateTime.UtcNow }).ExcludeFromDescription();
 #endregion
 
 #region Middleware
